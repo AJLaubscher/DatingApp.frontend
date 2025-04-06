@@ -2,10 +2,11 @@ import { ActivatedRoute } from '@angular/router';
 import { MembersService } from './../../_services/members.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { Member } from '../../_models/member';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @Component({
   selector: 'app-members-detail',
-  imports: [],
+  imports: [TabsModule],
   templateUrl: './members-detail.component.html',
   styleUrl: './members-detail.component.css'
 })
