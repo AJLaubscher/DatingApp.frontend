@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MembersService } from '../../_services/members.service';
 import { Member } from '../../_models/member';
+import { MembersCardComponent } from "../members-card/members-card.component";
 
 @Component({
   selector: 'app-members-list',
-  imports: [],
+  imports: [MembersCardComponent],
   templateUrl: './members-list.component.html',
   styleUrl: './members-list.component.css'
 })
