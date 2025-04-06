@@ -1,5 +1,5 @@
 import { GalleryItem } from 'ng-gallery';
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { Member } from '../../_models/member';
 import { AccountService } from '../../_services/account.service';
 import { MembersService } from '../../_services/members.service';
@@ -20,6 +20,11 @@ private memberService = inject(MembersService);
 private toastr = inject(ToastrService);
 
 @ViewChild('editForm') editForm?: NgForm;
+@HostListener('window:beforeunload', ['$events']) notify($events: any){
+  if (this.editForm?.dirty){
+    $events.returnValue = true;
+  }
+}
 
 ngOnInit(): void {
   this.loadMember();
