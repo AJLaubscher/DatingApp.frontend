@@ -4,10 +4,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Member } from '../../_models/member';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
+import { TimeagoModule } from 'ngx-timeago';
+ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-members-detail',
-  imports: [TabsModule, GalleryModule],
+  imports: [TabsModule, GalleryModule, TimeagoModule, DatePipe],
   templateUrl: './members-detail.component.html',
   styleUrl: './members-detail.component.css'
 })
