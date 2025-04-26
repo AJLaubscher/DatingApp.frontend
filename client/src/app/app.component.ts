@@ -2,7 +2,6 @@ import { AccountService } from './_services/account.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
-import { HomeComponent } from "./home/home.component";
 import { NgxSpinnerComponent } from 'ngx-spinner';
 
 @Component({
@@ -12,7 +11,7 @@ import { NgxSpinnerComponent } from 'ngx-spinner';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  private AccountService = inject(AccountService);
+  private accountService = inject(AccountService);
 
   ngOnInit(): void {
     this.setCurrentUser();
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit {
     const userString = localStorage.getItem('user');
     if(!userString) return;
     const user = JSON.parse(userString);
-    this.AccountService.currentUser.set(user);
+    this.accountService.setCurrentUser(user);
   }
 
 }
