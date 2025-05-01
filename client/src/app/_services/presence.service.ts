@@ -1,7 +1,7 @@
 import { ToastrService } from 'ngx-toastr';
 import { inject, Injectable, signal } from '@angular/core';
 import { HubConnection, HubConnectionBuilder, HubConnectionState} from '@microsoft/signalr';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { User } from '../_models/user';
 
 @Injectable({
