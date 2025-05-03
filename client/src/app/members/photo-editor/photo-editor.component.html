@@ -13,7 +13,7 @@
       </button>
       <button
         class="btn btn-sm btn-danger"
-        [disabled]="photo.isMain"
+        [disabled]="photo.isMain || !photo.isApproved"
         (click)="deletePhoto(photo)"
       >
         <i class="fa fa-trash"></i>
